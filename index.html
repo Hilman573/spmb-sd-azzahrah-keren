@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPMB SD Az-Zahrah Pasuruan 2026/2027</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* CSS Reset and Basic Styles */
+        :root {
+            --primary-color: #00695C; /* Green */
+            --secondary-color: #F9A825; /* Yellow */
+            --dark-color: #333;
+            --light-color: #f4f4f4;
+            --white-color: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+            color: #666;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #fbc02d;
+            transform: translateY(-2px);
+        }
+
+        /* Header & Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: background 0.3s;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar ul li a {
+            padding: 0 1rem;
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 105, 92, 0.7), rgba(0, 105, 92, 0.7)), url('https://images.unsplash.com/photo-1576766324203-3431107a4a83?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+            color: var(--white-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+        
+        /* Profile Section */
+        #profil {
+            background: var(--white-color);
+        }
+        
+        .profil-content {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .profil-content img {
+            width: 40%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .profil-content .text {
+            width: 60%;
+        }
+
+        /* Kenapa Memilih Kami Section */
+        #kenapa-kami .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .card {
+            background: var(--white-color);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+        .card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Ekstrakurikuler Section */
+        #ekstra {
+            background: var(--white-color);
+        }
+
+        #ekstra .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .ekstra-item {
+            display: flex;
+            align-items: center;
+            background: var(--light-color);
+            padding: 1rem;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        .ekstra-item:hover {
+            background: #e0e0e0;
+        }
+        .ekstra-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 1rem;
+        }
+
+        /* Pendaftaran & Jadwal */
+        .pendaftaran-jadwal-container {
+            display: flex;
+            gap: 3rem;
+        }
+        .pendaftaran, .jadwal {
+            flex: 1;
+            background: var(--white-color);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .pendaftaran h3, .jadwal h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Syarat Pendaftaran */
+        .syarat-list li {
+            list-style: none;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        .syarat-list i {
+            color: var(--primary-color);
+            margin-right: 1rem;
+            margin-top: 5px;
+        }
+        .syarat-list li div {
+            flex: 1;
+        }
+        .syarat-list li strong {
+            display: block;
+        }
+        .syarat-list .btn-wrapper {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        /* Jadwal Penting */
+        .jadwal-list li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px dashed #ddd;
+        }
+        .jadwal-list li:last-child {
+            border-bottom: none;
+        }
+        .jadwal-list i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-right: 1rem;
+        }
+        .jadwal-list .date {
+            font-weight: 600;
+            width: 150px;
+        }
+        
+        /* Kontak Section */
+        #kontak {
+            background: var(--dark-color);
+            color: var(--white-color);
+            text-align: center;
+        }
+        #kontak .section-title, #kontak p {
+            color: var(--white-color);
+        }
+        
+        .kontak-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        .kontak-info a {
+            color: var(--white-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        .kontak-info a:hover {
+            color: var(--secondary-color);
+        }
+        .kontak-info i {
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: var(--white-color);
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+        
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media(max-width: 768px) {
+            .navbar .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                background: var(--white-color);
+            }
+            
+            .navbar .nav-links.active {
+                display: flex;
+            }
+            
+            .navbar ul li {
+                width: 100%;
+                text-align: center;
+            }
+            .navbar ul li a {
+                padding: 1rem;
+                display: block;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .profil-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profil-content img, .profil-content .text {
+                width: 100%;
+            }
+
+            #kenapa-kami .grid {
+                grid-template-columns: 1fr;
+            }
+            #ekstra .grid {
+                grid-template-columns: 1fr;
+            }
+            .pendaftaran-jadwal-container {
+                flex-direction: column;
+            }
+            .kontak-info {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">SD Az-Zahrah</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#ekstra">Ekstrakurikuler</a></li>
+                <li><a href="#syarat">Pendaftaran</a></li>
+                <li><a href="#jadwal">Jadwal</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+            <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>🎓 Selamat Datang di SPMB SD AZ-ZAHRAH</h1>
+        <p>Tahun Ajaran 2026/2027<br>Saatnya bergabung bersama sekolah unggulan yang siap mencetak lulusan religius, akademis, dan multitalenta.</p>
+        <a href="#syarat" class="btn">Daftar Sekarang</a>
+    </section>
+    
+    <section id="profil">
+        <div class="container">
+            <h2 class="section-title">Profil Sekolah</h2>
+            <div class="profil-content">
+                <img src="https://iili.io/FuGonIt.jpg" alt="Logo SD Az-Zahrah">
+                <div class="text">
+                    <h3>Mencetak Generasi Qur'ani, Cerdas, dan Berkarakter</h3>
+                    <p>SD AZ-ZAHRAH adalah sekolah dasar yang berfokus pada penguatan iman, pembentukan karakter, pembekalan ilmu dan pengembangan bakat sebagai bekal masa depan. Terletak strategis dan didukung tenaga pendidik profesional, kami berkomitmen untuk memberikan pendidikan terbaik dalam lingkungan yang Islami dan modern.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kenapa-kami">
+        <div class="container">
+            <h2 class="section-title">Kenapa Memilih SD Az-Zahrah?</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-book-quran"></i>
+                    <h3>Lulusan Hafal Al-Qur'an</h3>
+                    <p>Target lulusan hafal hingga 4 juz dan memiliki kemampuan dasar membaca kitab kuning.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-hands-praying"></i>
+                    <h3>Penguatan Iman & Akhlak</h3>
+                    <p>Pendidikan karakter, adab, dan akhlakul karimah menjadi prioritas utama kami.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-flask-vial"></i>
+                    <h3>Fasilitas Lengkap & Modern</h3>
+                    <p>Didukung fasilitas laboratorium, perpustakaan, dan ruang praktik yang memadai.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Pengembangan Prestasi & Bakat</h3>
+                    <p>Banyak mencetak prestasi dan secara aktif mengembangkan bakat setiap siswa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ekstra">
+        <div class="container">
+            <h2 class="section-title">Ekstrakurikuler Unggulan</h2>
+            <p class="section-subtitle">Kami menyediakan beragam kegiatan untuk menyalurkan minat dan bakat siswa di luar jam pelajaran.</p>
+            <div class="grid">
+                <div class="ekstra-item"><i class="fas fa-campground"></i> Pramuka</div>
+                <div class="ekstra-item"><i class="fas fa-drum"></i> Al-Banjari</div>
+                <div class="ekstra-item"><i class="fas fa-user-ninja"></i> Pencak Silat</div>
+                <div class="ekstra-item"><i class="fas fa-music"></i> Paduan Suara</div>
+                <div class="ekstra-item"><i class="fas fa-laptop-code"></i> Komputer</div>
+                <div class="ekstra-item"><i class="fas fa-child-reaching"></i> Seni Tari</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="syarat">
+        <div class="container">
+            <h2 class="section-title">Pendaftaran & Jadwal</h2>
+             <div class="pendaftaran-jadwal-container">
+                <div class="pendaftaran">
+                    <h3>📝 Syarat Pendaftaran</h3>
+                    <ul class="syarat-list">
+                        <li>
+                           <i class="fas fa-1"></i>
+                           <div>
+                               <strong>Mengisi Formulir Online</strong>
+                               <span>Klik tombol di bawah untuk mengisi formulir.</span>
+                           </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-2"></i>
+                            <div>
+                                <strong>Upload Dokumen</strong>
+                                <span>Siapkan scan/foto: Ijazah TK, Kartu Keluarga, Akta Kelahiran, dan Pas Foto 3x4.</span>
+                            </div>
+                         </li>
+                         <li>
+                            <i class="fas fa-3"></i>
+                            <div>
+                                <strong>Pilih Ekstrakurikuler</strong>
+                                <span>Pilih sesuai minat dan bakat ananda.</span>
+                            </div>
+                         </li>
+                         <li>
+                            <i class="fas fa-4"></i>
+                            <div>
+                                <strong>Ikuti Tes & Wawancara</strong>
+                                <span>Jadwal akan diinformasikan setelah pendaftaran.</span>
+                            </div>
+                         </li>
+                    </ul>
+                    <div class="btn-wrapper">
+                        <a href="https://forms.gle/ZWzCTkoJeVafyNS98" target="_blank" class="btn">
+                            <i class="fab fa-wpforms"></i> Buka Formulir Pendaftaran
+                        </a>
+                    </div>
+                </div>
+                <div class="jadwal" id="jadwal">
+                    <h3>📅 Jadwal Penting</h3>
+                    <ul class="jadwal-list">
+                        <li><i class="fas fa-file-signature"></i> <span class="date">1 Mei – 20 Juni 2026</span> Pendaftaran Online</li>
+                        <li><i class="fas fa-user-pen"></i> <span class="date">22 – 25 Juni 2026</span> Tes dan Wawancara</li>
+                        <li><i class="fas fa-bullhorn"></i> <span class="date">30 Juni 2026</span> Pengumuman Kelulusan</li>
+                        <li><i class="fas fa-handshake"></i> <span class="date">1 – 5 Juli 2026</span> Daftar Ulang</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak">
+        <div class="container">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <p class="section-subtitle">Jangan ragu untuk bertanya. Tim kami siap membantu Anda.</p>
+            <div class="kontak-info">
+                <a href="mailto:sdazzahrah18@gmail.com">
+                    <i class="fas fa-envelope"></i> sdazzahrah18@gmail.com
+                </a>
+                <a href="https://wa.me/6281717530405" target="_blank">
+                    <i class="fab fa-whatsapp"></i> 0817-1753-0405
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SD Az-Zahrah Pasuruan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        const allNavLinks = document.querySelectorAll('.nav-links li a');
+        allNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
