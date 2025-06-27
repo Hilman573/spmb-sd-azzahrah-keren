@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengumuman Kelulusan SD Az-Zahrah Kota Pasuruan</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .header {
+            display: flex;
+            flex-direction: column; /* Mengubah arah flex menjadi kolom */
+            align-items: center; /* Pusatkan item secara horizontal */
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .header img {
+            max-width: 120px; /* Ukuran logo lebih besar */
+            margin-bottom: 20px; /* Jarak antara logo dan judul */
+        }
+        h1, h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        .form-group input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 12px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .result-pass {
+            background-color: #e6ffe6;
+            border: 1px solid #4CAF50;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .result-fail {
+            background-color: #ffe6e6;
+            border: 1px solid #f44336;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .status-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .status-pass {
+            color: #28a745; /* Green */
+        }
+        .status-fail {
+            color: #dc3545; /* Red */
+        }
+        .hidden {
+            display: none;
+        }
+        .footer-text {
+            margin-top: 30px;
+            font-style: italic;
+            color: #777;
+        }
+        .student-details {
+            text-align: left;
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
+        .student-details div {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="page1" class="container">
+        <div class="header">
+            <img src="https://iili.io/FAM4lcX.jpg" alt="Logo SD Az-Zahrah">
+            <h1>Pengumuman Kelulusan Santriwan dan Santriwati Kelas 6<br>SD Az-Zahrah Kota Pasuruan Tahun Ajaran 2025/2026</h1>
+        </div>
+        <p>Assalamu’alaikum warahmatullahi wabarakatuh,</p>
+        <p>Alhamdulillah, segala puji bagi Allah SWT yang telah memberikan kita nikmat iman, ilmu, dan kesehatan. Shalawat serta salam semoga tercurah kepada Nabi Muhammad SAW, keluarga, sahabat, dan seluruh umatnya hingga akhir zaman.</p>
+        <p>Dengan penuh rasa bangga dan haru, kami ucapkan selamat kepada seluruh santriwan dan santriwati kelas 6 SD Az-Zahrah Kota Pasuruan yang telah menyelesaikan masa belajar selama 6 tahun. Perjalanan ini tentu bukan hal yang mudah, namun kalian telah melewatinya dengan semangat, doa, dan kerja keras.</p>
+        <p>Semoga ilmu yang diperoleh menjadi bekal dunia dan akhirat, serta terus menjadikan kalian insan yang berakhlak mulia, berilmu, dan bermanfaat bagi masyarakat.</p>
+        <p>Silakan klik tombol LOGIN di bawah ini untuk melihat hasil kelulusan kalian masing-masing.</p>
+        <p>Wassalamu’alaikum warahmatullahi wabarakatuh.</p>
+        <p class="footer-text">Kepala Sekolah SD Az-Zahrah Kota Pasuruan</p>
+        <button class="button" onclick="showPage2()">🔵 LOGIN untuk Melihat Hasil Kelulusan</button>
+    </div>
+
+    <div id="page2" class="container hidden">
+        <h2>Silakan Masukkan NIS Anda</h2>
+        <p>Masukkan Nomor Induk Siswa (NIS) pada kolom di bawah ini untuk melihat status kelulusan Anda.</p>
+        <div class="form-group">
+            <label for="nisInput">NIS</label>
+            <input type="text" id="nisInput" placeholder="Contoh: 2020.001">
+        </div>
+        <button class="button" onclick="checkGraduation()">🔍 CEK KELULUSAN</button>
+    </div>
+
+    <div id="resultPass" class="container hidden result-pass">
+        <h2>🎉 Selamat!</h2>
+        <div class="student-details">
+            <p><strong>NIS:</strong> <span id="nisPass"></span></p>
+            <p><strong>Nama:</strong> <span id="namePass"></span></p>
+        </div>
+        <p class="status-text status-pass">✅ LULUS</p>
+        <p>Anda dinyatakan LULUS dari SD Az-Zahrah Kota Pasuruan.</p>
+        <p>Silakan mengambil Surat Keterangan Lulus di Ruang Administrasi dengan berpakaian rapi dan sopan.</p>
+    </div>
+
+    <div id="resultFail" class="container hidden result-fail">
+        <h2>ℹ️ Informasi Kelulusan</h2>
+        <div class="student-details">
+            <p><strong>NIS:</strong> <span id="nisFail"></span></p>
+            <p><strong>Nama:</strong> <span id="nameFail"></span></p>
+        </div>
+        <p class="status-text status-fail">❌ TIDAK LULUS</p>
+        <p>Mohon maaf, berdasarkan hasil evaluasi, Anda belum dinyatakan lulus.</p>
+        <p>Silakan hubungi pihak sekolah untuk informasi lebih lanjut.</p>
+    </div>
+
+    <script>
+        // Data siswa. Untuk implementasi nyata, data ini biasanya diambil dari database.
+        const students = {
+            "2020.001": { name: "M. ILHAM AKMAL", status: "LULUS" },
+            "2020.002": { name: "NAURA VAZA SALSABILA", status: "LULUS" },
+            "2020.003": { name: "ACHMAD RADITYA ARKAAN", status: "LULUS" },
+            "2020.004": { name: "DHANISH VIVALDI AL AYYUBI", status: "LULUS" },
+            "2020.005": { name: "NAYLA KAYYISAH", status: "LULUS" },
+            "2020.006": { name: "DHAFFIN DWI PUTRA", status: "LULUS" },
+            "2020.007": { name: "ZANUBA AQILA", status: "LULUS" }
+            // Tambahkan data siswa lain di sini sesuai kebutuhan
+        };
+
+        function showPage2() {
+            document.getElementById('page1').classList.add('hidden');
+            document.getElementById('page2').classList.remove('hidden');
+            document.getElementById('resultPass').classList.add('hidden');
+            document.getElementById('resultFail').classList.add('hidden');
+            document.getElementById('nisInput').value = ''; // Bersihkan input saat pindah halaman
+        }
+
+        function checkGraduation() {
+            const nis = document.getElementById('nisInput').value.trim();
+            const student = students[nis];
+
+            document.getElementById('page2').classList.add('hidden');
+
+            if (student) {
+                if (student.status === "LULUS") {
+                    document.getElementById('nisPass').textContent = nis;
+                    document.getElementById('namePass').textContent = student.name;
+                    document.getElementById('resultPass').classList.remove('hidden');
+                    document.getElementById('resultFail').classList.add('hidden');
+                } else {
+                    // Ini untuk kasus jika ada siswa yang datanya ditemukan tapi statusnya "TIDAK LULUS"
+                    document.getElementById('nisFail').textContent = nis;
+                    document.getElementById('nameFail').textContent = student.name;
+                    document.getElementById('resultFail').classList.remove('hidden');
+                    document.getElementById('resultPass').classList.add('hidden');
+                }
+            } else {
+                // Jika NIS tidak ditemukan dalam data 'students'
+                document.getElementById('nisFail').textContent = nis;
+                document.getElementById('nameFail').textContent = "Data Tidak Ditemukan";
+                document.getElementById('resultFail').classList.remove('hidden');
+                document.getElementById('resultPass').classList.add('hidden');
+            }
+        }
+    </script>
+
+</body>
+</html>
